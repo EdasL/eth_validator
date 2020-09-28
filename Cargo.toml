@@ -1,7 +1,7 @@
 [package]
 name = "eth_validator"
 version = "0.1.0"
-authors = ["Edas Lakavicius <elakavicius@gmail.com>"]
+authors = ["Edas Lakavicius <elakavicius@gmail.com>", "Julius Rupšys", "Augustas Valaitis", "Nerius Žarnauskas"]
 edition = "2018"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
