@@ -171,6 +171,8 @@ def compute_updated_gasprice(prev_gasprice: Gwei, shard_block_length: uint64) ->
         return max(prev_gasprice, MIN_GASPRICE + delta) - delta
 ```
 
+## Constants
+
 ```python
 # Mainnet preset - phase 1
 
