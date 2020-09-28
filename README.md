@@ -112,6 +112,8 @@ class ShardState(Container):
     latest_block_root: Root
 ```
 
+## Functions
+
 #### `compute_offset_slots`
 
 ```python
@@ -168,6 +170,8 @@ def compute_updated_gasprice(prev_gasprice: Gwei, shard_block_length: uint64) ->
                  // TARGET_SHARD_BLOCK_SIZE // GASPRICE_ADJUSTMENT_COEFFICIENT)
         return max(prev_gasprice, MIN_GASPRICE + delta) - delta
 ```
+
+## Constants
 
 ```python
 # Mainnet preset - phase 1
