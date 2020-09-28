@@ -295,3 +295,5 @@ We define the following Python custom types for type hinting and readability:
 | `Domain` | `Bytes32` | a signature domain |
 | `BLSPubkey` | `Bytes48` | a BLS12-381 public key |
 | `BLSSignature` | `Bytes96` | a BLS12-381 signature |
+
+[SSZ types](https://github.com/ethereum/eth2.0-specs/blob/dev/ssz/simple-serialize.md)
