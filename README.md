@@ -112,6 +112,8 @@ class ShardState(Container):
     latest_block_root: Root
 ```
 
+## Functions
+
 #### `compute_offset_slots`
 
 ```python
