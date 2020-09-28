@@ -1,5 +1,36 @@
 # eth_validator
 
+```python
+def get_shard_transition_fields(
+    beacon_state: BeaconState,
+    shard: Shard,
+    shard_blocks: Sequence[SignedShardBlock],
+) -> Tuple[Sequence[uint64], Sequence[Root], Sequence[ShardState]]:
+    shard_block_lengths = []  # type: PyList[uint64]
+    shard_data_roots = []  # type: PyList[Root]
+    shard_states = []  # type: PyList[ShardState]
+
+    shard_state = beacon_state.shard_states[shard]
+    shard_block_slots = [shard_block.message.slot for shard_block in shard_blocks]
+    offset_slots = compute_offset_slots(
+        get_latest_slot_for_shard(beacon_state, shard),
+        Slot(beacon_state.slot + 1),
+    )
+    for slot in offset_slots:
+        if slot in shard_block_slots:
+            shard_block = shard_blocks[shard_block_slots.index(slot)]
+            shard_data_roots.append(hash_tree_root(shard_block.message.body))
+        else:
+            shard_block = SignedShardBlock(message=ShardBlock(slot=slot, shard=shard))
+            shard_data_roots.append(Root())
+        shard_state = shard_state.copy()
+        process_shard_block(shard_state, shard_block.message)
+        shard_states.append(shard_state)
+        shard_block_lengths.append(uint64(len(shard_block.message.body)))
+
+    return shard_block_lengths, shard_data_roots, shard_states
+```
+
 #### `BeaconState`
 
 ```python
