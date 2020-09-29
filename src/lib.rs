@@ -1,25 +1,25 @@
 pub mod validator {
 
     pub struct BeaconState {
-        shard_states: Vec<ShardState>,
-        slot: Slot,
+        pub shard_states: Vec<ShardState>,
+        pub slot: Slot,
     }
 
     pub struct ShardBlock {
-        slot: Slot,
-        shard: Shard,
-        body: ByteList,
+        pub slot: Slot,
+        pub shard: Shard,
+        pub body: ByteList,
     }
 
     pub struct SignedShardBlock {
-        message: ShardBlock,
+        pub message: ShardBlock,
     }
 
     #[derive(Clone)]
     pub struct ShardState {
-        slot: Slot,
-        gasprice: Gwei,
-        latest_block_root: Root,
+        pub slot: Slot,
+        pub gasprice: Gwei,
+        pub latest_block_root: Root,
     }
 
     pub type Shard = u64; // Shard number
