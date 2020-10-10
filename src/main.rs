@@ -4,7 +4,6 @@ fn main() {
 #[cfg(test)]
 pub mod tests{
     use eth_validator::validator::*;
-    use std::io::empty;
 
     #[test]
     fn get_shard_transition_fields_four_signed_shards_blocks() {
@@ -34,20 +33,6 @@ pub mod tests{
         let signed_shard_block_2 = SignedShardBlock {
             message: ShardBlock {
                 slot: 4,
-                shard: 1,
-                body: vec![1,2,3]
-            }
-        };
-        let signed_shard_block_3 = SignedShardBlock {
-            message: ShardBlock {
-                slot: 6,
-                shard: 1,
-                body: vec![1,2,3]
-            }
-        };
-        let signed_shard_block_4 = SignedShardBlock {
-            message: ShardBlock {
-                slot: 9,
                 shard: 1,
                 body: vec![1,2,3]
             }
