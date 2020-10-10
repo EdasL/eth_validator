@@ -34,7 +34,7 @@ pub mod validator {
     const MAX_GASPRICE: u64 = 16384;
     const MIN_GASPRICE: u64 = 8;
 
-    fn hash_tree_root<T>(obj: &T) -> i32 {
+    fn hash_tree_root<T>(_obj: &T) -> i32 {
         404 // Mock function
     }
 
