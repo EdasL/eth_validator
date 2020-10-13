@@ -71,12 +71,12 @@ pub mod tests{
         };
         let expected_shard_state2 = ShardState{
             slot: 3,
-            gasprice: 8,
+            gasprice: 0,
             latest_block_root: 404
         };
         let expected_shard_state3 = ShardState{
             slot: 4,
-            gasprice: 8,
+            gasprice: 0,
             latest_block_root: 404
         };
         let expected_shard_states = vec![expected_shard_state1, expected_shard_state2, expected_shard_state3];

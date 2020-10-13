@@ -29,7 +29,7 @@ pub mod validator {
     pub type Gwei = u64; // an amount in Gwei
 
     const SHARD_BLOCK_OFFSETS: [i32; 12] = [1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233];
-    const TARGET_SHARD_BLOCK_SIZE: u64 = 262144;
+    const TARGET_SHARD_BLOCK_SIZE: u64 = 1;
     const GASPRICE_ADJUSTMENT_COEFFICIENT: u64 = 8;
     const MAX_GASPRICE: u64 = 16384;
     const MIN_GASPRICE: u64 = 8;
