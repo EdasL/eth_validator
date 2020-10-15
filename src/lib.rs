@@ -228,48 +228,6 @@ pub mod validator {
 
         (shards, winning_roots)
     }
-    // def get_shard_winning_roots(state: BeaconState,
-    //                             attestations: Sequence[Attestation]) -> Tuple[Sequence[Shard], Sequence[Root]]:
-    //     shards = []
-    //     winning_roots = []
-    //     online_indices = get_online_validator_indices(state)
-    //     on_time_attestation_slot = compute_previous_slot(state.slot)
-    //     committee_count = get_committee_count_per_slot(state, compute_epoch_at_slot(on_time_attestation_slot))
-    //     for committee_index in map(CommitteeIndex, range(committee_count)):
-    //         shard = compute_shard_from_committee_index(state, committee_index, on_time_attestation_slot)
-    //         # All attestations in the block for this committee/shard and are "on time"
-    //         shard_attestations = [
-    //             attestation for attestation in attestations
-    //             if is_on_time_attestation(state, attestation.data) and attestation.data.index == committee_index
-    //         ]
-    //         committee = get_beacon_committee(state, on_time_attestation_slot, committee_index)
-
-    //         # Loop over all shard transition roots, looking for a winning root
-    //         shard_transition_roots = set(a.data.shard_transition_root for a in shard_attestations)  # non-duplicate
-    //         for shard_transition_root in sorted(shard_transition_roots):
-    //             transition_attestations = [
-    //                 a for a in shard_attestations
-    //                 if a.data.shard_transition_root == shard_transition_root
-    //             ]
-    //             transition_participants: Set[ValidatorIndex] = set()
-    //             for attestation in transition_attestations:
-    //                 participants = get_attesting_indices(state, attestation.data, attestation.aggregation_bits)
-    //                 transition_participants = transition_participants.union(participants)
-
-    //             enough_online_stake = (
-    //                 get_total_balance(state, online_indices.intersection(transition_participants)) * 3 >=
-    //                 get_total_balance(state, online_indices.intersection(committee)) * 2
-    //             )
-    //             if enough_online_stake:
-    //                 shards.append(shard)
-    //                 winning_roots.append(shard_transition_root)
-    //                 break
-
-    //     return shards, winning_roots
-
-    // Mocks for get_shard_winning_roots
-
-    // arg types
 
     pub struct Checkpoint {
         pub root: Root,
