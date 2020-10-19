@@ -16,9 +16,6 @@ mod real_eth1;
 mod validator;
 mod validator_config;
 
-fn main() {
-
-}
 #[cfg(test)]
 pub mod tests{
   use eth_validator::validator::*;
